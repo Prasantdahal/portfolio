@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prashant Dahal | Portfolio</title>
+    <meta name="description" content="Portfolio of Prashant Dahal - BSc. CSIT Student focusing on systems and performance.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        black: '#000000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        #particle-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .content-layer {
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-blur {
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .classic-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 0;
+            width: 100%;
+            transition: border-color 0.4s ease;
+            outline: none;
+            color: #ffffff;
+        }
+
+        .classic-input:focus {
+            border-bottom-color: #ffffff;
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* Hide scrollbar */
+        ::-webkit-scrollbar { display: none; }
+        html { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background-color: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation Taskbar -->
+    <nav class="fixed top-0 w-full z-[100] nav-blur border-b border-white/5">
+        <div class="max-w-6xl mx-auto px-8 h-20 flex items-center justify-between">
+            <div class="text-lg font-extrabold tracking-tighter">
+                PRASHANT<span class="font-light text-gray-500">DAHAL</span>
+            </div>
+            
+            <!-- Taskbar Links -->
+            <div class="flex items-center gap-6 md:gap-10">
+                <a href="#home" class="nav-link text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white">Home</a>
+                <a href="#about" class="nav-link text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white">About Me</a>
+                <a href="#projects" class="nav-link text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white">Projects</a>
+                <a href="#contact" class="nav-link text-[10px] md:text-[11px] font-bold uppercase tracking-[0.2em] text-gray-400 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="content-layer">
+        
+        <!-- Block 1: Home -->
+        <section id="home" class="min-h-screen flex flex-col justify-center px-8">
+            <div class="max-w-6xl mx-auto w-full">
+                <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9]">
+                    Prashant Dahal.
+                </h1>
+                <p class="text-xl md:text-3xl text-gray-400 font-light max-w-3xl leading-relaxed">
+                    BSc. CSIT student engineering <span class="text-white">logical interfaces</span> and studying fundamental computing architectures.
+                </p>
+            </div>
+        </section>
+
+        <!-- Block 2: About Me -->
+        <section id="about" class="py-32 px-8">
+            <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12">
+                <div class="md:col-span-4">
+                    <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 mb-4">Academic Status</h2>
+                    <p class="text-sm font-medium">BSc. CSIT / 2nd Semester</p>
+                </div>
+                <div class="md:col-span-8">
+                    <p class="text-xl md:text-2xl text-gray-400 leading-relaxed font-light">
+                        Pursuing a <span class="text-white">BSc. in Computer Science & Information Technology</span>. Focused on system architecture, mathematical logic, and clean web engineering that prioritizes performance and clarity.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 3: Projects -->
+        <section id="projects" class="py-32 px-8 border-t border-white/10">
+            <div class="max-w-6xl mx-auto w-full">
+                <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 mb-20">Selected Work</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border-l border-white/10">
+                    <!-- Project 1 -->
+                    <div class="p-10 border-r border-b md:border-b-0 border-white/10 hover:bg-white/[0.02] transition-colors group">
+                        <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Simulation</span>
+                        <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Web Browser Concept</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">
+                            Analysis and visualization of browser rendering engine processes.
+                        </p>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="p-10 border-r border-b md:border-b-0 border-white/10 hover:bg-white/[0.02] transition-colors group">
+                        <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Systems</span>
+                        <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">OS Shell Simulation</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">
+                            Interactive CLI demonstrating low-level process tracking concepts.
+                        </p>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="p-10 border-r border-white/10 hover:bg-white/[0.02] transition-colors group">
+                        <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Logic</span>
+                        <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Scientific Calculator</h3>
+                        <p class="text-sm text-gray-500 leading-relaxed font-light">
+                            Refined engine for processing complex calculus and integrations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Block 4: Contact -->
+        <section id="contact" class="py-48 px-8 border-t border-white/10">
+            <div class="max-w-3xl mx-auto w-full text-center">
+                <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-12">Connect.</h2>
+                <form action="#" class="text-left space-y-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                        <input type="text" placeholder="NAME" class="classic-input text-xs tracking-widest uppercase font-bold">
+                        <input type="email" placeholder="EMAIL" class="classic-input text-xs tracking-widest uppercase font-bold">
+                    </div>
+                    <textarea placeholder="MESSAGE" rows="1" class="classic-input text-xs tracking-widest uppercase font-bold"></textarea>
+                    <div class="flex justify-center pt-8">
+                        <button type="submit" class="text-[10px] font-black uppercase tracking-[0.5em] border border-white px-12 py-5 hover:bg-white hover:text-black transition-all">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 px-8 border-t border-white/5">
+            <div class="max-w-6xl mx-auto w-full flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-[10px] font-bold text-gray-600 tracking-[0.3em] uppercase">
+                    © 2026 PRASHANT DAHAL
+                </div>
+                <div class="flex gap-10">
+                    <a href="https://github.com/Prasantdahal" target="_blank" class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Github</a>
+                    <a href="https://facebook.com/This.is.dahal" target="_blank" class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Facebook</a>
+                    <a href="https://instagram.com/prashant_pat10" target="_blank" class="text-[10px] font-bold text-gray-500 hover:text-white uppercase tracking-widest transition-colors">Instagram</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Canvas Script -->
+    <script>
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        const mouse = { x: null, y: null, radius: 170 };
+
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.opacity = (Math.random() * 0.4) + 0.5; 
+            }
+
+            draw() {
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x > canvas.width || this.x < 0) this.vx *= -1;
+                if (this.y > canvas.height || this.y < 0) this.vy *= -1;
+
+                if (mouse.x !== null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        
+                        this.x += forceDirectionX * force * 1.2;
+                        this.y += forceDirectionY * force * 1.2;
+
+                        ctx.strokeStyle = `rgba(255, 255, 255, ${force * 0.3})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(this.x, this.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function init() {
+            particles = [];
+            let count = (canvas.width * canvas.height) / 11000;
+            for (let i = 0; i < count; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].draw();
+                particles[i].update();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // Scroll Reveal logic
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(25px)';
+            section.style.transition = 'all 0.8s ease-out';
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
