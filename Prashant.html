@@ -6,7 +6,7 @@
     <title>Prashant Dahal | Portfolio</title>
     <meta name="description" content="Portfolio of Prashant Dahal - BSc. CSIT Student focusing on systems and performance.">
     
-    <!-- Favicons -->
+    <!-- FAVICON IMPLEMENTATION (EXACT) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -84,7 +84,7 @@
             color: #000000;
         }
 
-        /* Hide scrollbar */
+        /* Scrollbar styling - hidden */
         ::-webkit-scrollbar { display: none; }
         html { -ms-overflow-style: none; scrollbar-width: none; }
 
@@ -111,6 +111,7 @@
 </head>
 <body class="font-sans antialiased">
 
+    <!-- Interactive Canvas Layer -->
     <canvas id="particle-canvas"></canvas>
 
     <!-- Navigation Taskbar -->
@@ -132,7 +133,7 @@
 
     <main class="content-layer">
         
-        <!-- Block 1: Home -->
+        <!-- Section 1: Home -->
         <section id="home" class="min-h-screen flex flex-col justify-center px-8">
             <div class="max-w-6xl mx-auto w-full">
                 <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[0.9]">
@@ -144,7 +145,7 @@
             </div>
         </section>
 
-        <!-- Block 2: About Me -->
+        <!-- Section 2: About Me -->
         <section id="about" class="py-32 px-8">
             <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div class="md:col-span-4">
@@ -159,7 +160,7 @@
             </div>
         </section>
 
-        <!-- Block 3: Projects -->
+        <!-- Section 3: Projects -->
         <section id="projects" class="py-32 px-8 border-t border-white/10">
             <div class="max-w-6xl mx-auto w-full">
                 <h2 class="text-xs font-bold uppercase tracking-[0.4em] text-gray-500 mb-20">Selected Work</h2>
@@ -170,7 +171,7 @@
                         <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Simulation</span>
                         <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Web Browser Concept</h3>
                         <p class="text-sm text-gray-500 leading-relaxed font-light">
-                            Visualizing browser rendering engine processes.
+                            Visualizing browser rendering engine processes and critical path optimization.
                         </p>
                     </div>
 
@@ -179,7 +180,7 @@
                         <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Systems</span>
                         <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">OS Shell Simulation</h3>
                         <p class="text-sm text-gray-500 leading-relaxed font-light">
-                            Interactive CLI demonstrating process tracking.
+                            Interactive CLI demonstrating low-level process tracking and kernel-user space concepts.
                         </p>
                     </div>
 
@@ -188,14 +189,14 @@
                         <span class="text-[10px] font-mono text-gray-600 mb-8 block uppercase">Logic</span>
                         <h3 class="text-xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Scientific Calculator</h3>
                         <p class="text-sm text-gray-500 leading-relaxed font-light">
-                            Mathematical engine for complex integrations.
+                            Mathematical engine built for handling complex calculus and high-precision integrations.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Block 4: Contact -->
+        <!-- Section 4: Contact -->
         <section id="contact" class="py-48 px-8 border-t border-white/10">
             <div class="max-w-3xl mx-auto w-full text-center">
                 <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-12">Connect.</h2>
@@ -229,7 +230,7 @@
         </footer>
     </main>
 
-    <!-- Canvas Script -->
+    <!-- Interactive Canvas Script -->
     <script>
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
@@ -254,7 +255,7 @@
                 this.size = Math.random() * 1.5 + 0.5;
                 this.vx = (Math.random() - 0.5) * 0.35;
                 this.vy = (Math.random() - 0.5) * 0.35;
-                this.opacity = (Math.random() * 0.4) + 0.5; // High visibility 0.5 - 0.9
+                this.opacity = (Math.random() * 0.4) + 0.5; 
             }
 
             draw() {
